@@ -10,7 +10,11 @@ detect = cv2.QRCodeDetector
 while True:
     _, img = cam.read()
 
+    detect = pyzbar.decode(img)
+    for obj in detect:
+        print(obj.data)
+
     cv2.imshow("Frame", img)
     key = cv2.waitKey(1)
-    if key == 27:
+    if key == 1:
         break
