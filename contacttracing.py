@@ -30,4 +30,4 @@ while i == True:
 
     cv2.imshow("Scanner", qr)
     cv2.waitKey(1)
-    
+    cv2.destroyAllWindows
