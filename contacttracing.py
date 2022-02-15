@@ -8,3 +8,7 @@ cam = cv2.VideoCapture(0)
 cam.set (3, 1080)
 cam.set (4, 720)
 
+i = True
+while i == True:
+    _, frame = cam.read()
+
