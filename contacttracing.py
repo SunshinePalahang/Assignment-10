@@ -22,5 +22,12 @@ while i == True:
 #for storing in text file
         f = open("Contact Tracing.txt", "w")
         f.write(f"{obj.data.decode('utf-8')}\n")
+#for date and time
+        date = datetime.datetime.now()
+        f.write(date.strftime("Date: %m/%d/%y\n"))
+        f.write(date.strftime("Time: %H:%M:%S"))
+        f.close()
+
     cv2.imshow("Scanner", qr)
     cv2.waitKey(1)
+    
