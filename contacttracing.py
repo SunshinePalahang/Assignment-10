@@ -10,5 +10,11 @@ cam.set (4, 720)
 
 i = True
 while i == True:
-    _, frame = cam.read()
-
+    _, qr = cam.read()
+    for obj in decode(qr):
+#for effects
+        pts = np.array([obj.polygon],np.int32)
+        pts = pts.reshape((-1, 1, 2))
+        cv2.polylines(qr, [pts], True, (120, 0, 120), 5)
+    cv2.imshow("Scanner", qr)
+    cv2.waitKey(1)
