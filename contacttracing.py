@@ -16,6 +16,9 @@ while i == True:
         pts = np.array([obj.polygon],np.int32)
         pts = pts.reshape((-1, 1, 2))
         cv2.polylines(qr, [pts], True, (120, 0, 120), 5)
+        name = "Scan Results is up!"
+        pts2 = obj.rect
+        cv2.putText(qr, name, (pts2 [0], pts2 [1]), cv2.FONT_HERSHEY_COMPLEX_SMALL, 1,(0,0,0),2)
 #for storing in text file
         f = open("Contact Tracing.txt", "w")
         f.write(f"{obj.data.decode('utf-8')}\n")
