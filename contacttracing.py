@@ -16,5 +16,8 @@ while i == True:
         pts = np.array([obj.polygon],np.int32)
         pts = pts.reshape((-1, 1, 2))
         cv2.polylines(qr, [pts], True, (120, 0, 120), 5)
+#for storing in text file
+        f = open("Contact Tracing.txt", "w")
+        f.write(f"{obj.data.decode('utf-8')}\n")
     cv2.imshow("Scanner", qr)
     cv2.waitKey(1)
